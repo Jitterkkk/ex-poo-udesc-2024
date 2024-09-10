@@ -7,5 +7,6 @@ public class TesteRetangulo {
         System.out.println("Largura: " + retangulo.getLargura());
         System.out.println("Altura: " + retangulo.getAltura());
         System.out.println("Área: " + retangulo.area());
+
     }
 }
