@@ -15,7 +15,7 @@ public class Carro {
         if (velocidadeAtual >= 10.0) {
             velocidadeAtual -= 10.0;
         } else {
-            velocidadeAtual = 0.0/
+            velocidadeAtual = 0.0;
         }
     }
     public double exibirVelocidade(){

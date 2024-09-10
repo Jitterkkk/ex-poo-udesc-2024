@@ -21,7 +21,7 @@ public class Livro {
         if (emprestado){
             emprestado = false;
         } else {
-            System.out.println("O livro já está disponivel")
+            System.out.println("O livro já está disponivel");
         }
     }
     public boolean verificarDisponibilidade(){
