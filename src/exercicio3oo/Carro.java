@@ -1,51 +1,36 @@
 package exercicio3oo;
+import java.util.Scanner;
 
 public class Carro {
     private String modelo;
     private String marca;
     private int ano;
-    private double velocidade;
+    private double velocidadeAtual;
 
-    //Construtor padrão
-    public Carro(){
+    // Construtor padrão
+    public Carro() {
         this.modelo = "";
         this.marca = "";
-        this.velocidade = 0.0;
-
+        this.ano = 0;
+        this.velocidadeAtual = 0.0;
     }
 
-    //Construtor parametrizado
-    public Carro(String modelo, String marca, int ano, double velocidade){
+    // Construtor com parâmetros
+    public Carro(String modelo, String marca, int ano) {
         this();
         this.modelo = modelo;
         this.marca = marca;
         this.ano = ano;
-        this.velocidade = velocidade;
+        this.velocidadeAtual = 0.0; // O carro começa parado
     }
 
-    // Getters e Setters - Métodos de Entrada
+    // Métodos de acesso (getters e setters)
     public String getModelo() {
         return modelo;
     }
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
-    }
-
-    public double getVelocidade() {
-        return velocidade;
-    }
-
-    public void setVelocidade(double velocidade) {
-        this.velocidade = velocidade;
-    }
-
-    public int getAno() {
-        return ano;
-    }
-
-    public void setAno(int ano) {
-        this.ano = ano;
     }
 
     public String getMarca() {
@@ -56,28 +41,41 @@ public class Carro {
         this.marca = marca;
     }
 
-    //Métodos principais
-    public void acelerar(){
-        this.velocidade += 10;
-        System.out.println("Você acelerou. Velocidade atual: " + velocidade + " km/h");
+    public int getAno() {
+        return ano;
     }
 
-    public void frear(){
-        if (this.velocidade >= 10) {
-            this.velocidade -= 10;
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    public double getVelocidadeAtual() {
+        return velocidadeAtual;
+    }
+
+    // Método para acelerar (aumenta 10 km/h)
+    public void acelerar() {
+        this.velocidadeAtual += 10;
+        System.out.println("O carro acelerou. Velocidade atual: " + velocidadeAtual + " km/h");
+    }
+
+    // Método para frear (diminui 10 km/h, mas não pode ser menor que 0)
+    public void frear() {
+        if (this.velocidadeAtual >= 10) {
+            this.velocidadeAtual -= 10;
         } else {
-            this.velocidade = 0;
+            this.velocidadeAtual = 0;
         }
-        System.out.println("Você freou. Velocidade atual: " + velocidade + " km/h");
+        System.out.println("O carro freou. Velocidade atual: " + velocidadeAtual + " km/h");
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Carro{" +
-                "modelo = '" + modelo + '\'' +
-                ", marca= '" + marca + '\'' +
-                ", ano=" + ano +
-                ", velocidade=" + velocidade +
+                "Modelo='" + modelo + '\'' +
+                ", Marca='" + marca + '\'' +
+                ", Ano=" + ano +
+                ", Velocidade Atual=" + velocidadeAtual + " km/h" +
                 '}';
     }
 }
