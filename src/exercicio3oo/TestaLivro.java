@@ -1,42 +1,36 @@
 package exercicio3oo;
 import java.util.Scanner;
 
-public class TestaRetangulo {
+public class TestaLivro {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        Retangulo retangulo = new Retangulo();
+        // Criando o livro
+        Livro livro = new Livro("O senhor dos Anéis", "J.R.R. Tolkien", false);
 
         int opcao;
         do {
-            System.out.println("\n--- Menu Retângulo ---");
-            System.out.println("1. Definir largura e altura");
-            System.out.println("2. Calcular área");
-            System.out.println("3. Exibir informações do retângulo");
+            System.out.println("\n--- Menu Livro ---");
+            System.out.println("1. Emprestar livro");
+            System.out.println("2. Devolver livro");
+            System.out.println("3. Consultar estado do livro");
             System.out.println("4. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
 
             switch (opcao) {
                 case 1:
-                    System.out.print("Largura: ");
-                    retangulo.setLargura(scanner.nextDouble());
-                    System.out.print("Altura: ");
-                    retangulo.setAltura(scanner.nextDouble());
+                    livro.emprestar();
                     break;
-
                 case 2:
-                    System.out.println("Área do retângulo: " + retangulo.calcularArea());
+                    livro.devolver();
                     break;
-
                 case 3:
-                    System.out.println(retangulo);
+                    System.out.println(livro);
                     break;
-
                 case 4:
                     System.out.println("Saindo...");
                     break;
-
                 default:
                     System.out.println("Opção inválida!");
             }
@@ -44,4 +38,5 @@ public class TestaRetangulo {
 
         scanner.close();
     }
+
 }
