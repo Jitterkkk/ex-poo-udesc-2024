@@ -4,6 +4,16 @@ public class Retangulo extends FormaGeometrica {
     private int base;
     private int altura;
 
+    public Retangulo(){
+
+    }
+
+    public Retangulo(String cor, String descricao, int base, int altura) {
+        super(cor, descricao);
+        this.base = base;
+        this.altura = altura;
+    }
+
     public int getAltura() {
         return altura;
     }
@@ -22,7 +32,6 @@ public class Retangulo extends FormaGeometrica {
 
     public void identificar(){
         System.out.println("Eu sou um Retangulo");
-        System.out.println("Minha cor é: " + this.cor);
-        System.out.println("Minha descrição é: " + this.descricao);
+        super.identificar();
     }
 }
